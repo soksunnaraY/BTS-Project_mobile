@@ -1,5 +1,5 @@
-import 'package:bts_it/sucessfuly.dart';
 import 'package:flutter/material.dart';
+import 'sucessfully_login.dart';
 
 class VerificationPage extends StatelessWidget {
   const VerificationPage({super.key});
@@ -106,7 +106,7 @@ class VerificationPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SucessfulyPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Sucessfully_loginPage()));
                 },
                 child: const Text(
                   'Submit',

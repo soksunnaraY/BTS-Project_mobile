@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
               'Login to your Account',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
 
             TextField(
               decoration: const InputDecoration(
@@ -63,11 +63,11 @@ class LoginPage extends StatelessWidget {
             //     border: OutlineInputBorder(),
             //   ),
             // ),
-            const SizedBox(height: 25),
+            const SizedBox(height: 15),
 
             SizedBox(
               width: double.infinity,
-              height: 55,
+              height: 40,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,

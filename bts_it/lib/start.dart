@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register.dart';
-import 'login.dart';
+
 
 class StartPage extends StatelessWidget {
   final String userName;
@@ -70,20 +70,20 @@ class StartPage extends StatelessWidget {
             const SizedBox(height: 10),
 
             // 🔹 LOGIN
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
-                );
-              },
-              child: const Text(
-                'Login',
-                style: TextStyle(color: Colors.grey),
-              ),
-            ),
+            // TextButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => const LoginPage(),
+            //       ),
+            //     );
+            //   },
+            //   child: const Text(
+            //     'Login',
+            //     style: TextStyle(color: Colors.grey),
+            //   ),
+            // ),
           ],
         ),
       ),

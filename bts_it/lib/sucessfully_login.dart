@@ -8,7 +8,6 @@ class Sucessfully_loginPage extends StatefulWidget {
   @override
   State<Sucessfully_loginPage> createState() => _Sucessfully_loginPageState();
 }
-
 class _Sucessfully_loginPageState extends State<Sucessfully_loginPage> {
   
   @override
