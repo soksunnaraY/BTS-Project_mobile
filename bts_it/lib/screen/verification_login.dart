@@ -1,4 +1,4 @@
-import 'package:bts_it/password_login.dart';
+import 'package:bts_it/screen/password_login.dart';
 import 'package:flutter/material.dart';
 
 class Verification_LoginPage extends StatelessWidget {

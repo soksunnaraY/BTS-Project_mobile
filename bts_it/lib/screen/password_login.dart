@@ -1,4 +1,4 @@
-import 'package:bts_it/sucessfully_login.dart';
+import 'package:bts_it/screen/sucessfully_login.dart';
 import 'package:flutter/material.dart';
 
 class PasswordLogin extends StatefulWidget {

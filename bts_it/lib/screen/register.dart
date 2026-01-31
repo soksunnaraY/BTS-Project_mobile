@@ -1,4 +1,4 @@
-import 'package:bts_it/verification.dart';
+import 'package:bts_it/screen/verification.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 

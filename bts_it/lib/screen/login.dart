@@ -1,9 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'verification_login.dart';
+import '../services/api_service.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController emailController =
+    TextEditingController();
+  final TextEditingController passwordController =
+    TextEditingController();
+
+  Future<void> login() async {
+    final email = emailController.text.trim();
+    final password = passwordController.text.trim();
+
+    if (email.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please enter email")),
+      );
+      return;
+    }
+
+    try {
+      // TODO: Call API here later
+      final result = await ApiService().login(email, password);
+
+      // Temporary: go to next page
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Verification_LoginPage(),
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Login failed: $e")),
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +89,18 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 15),
 
             TextField(
+              controller: emailController, 
               decoration: const InputDecoration(
-                labelText: 'Phone number',
+                labelText: 'Email',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 15),
+            TextField(
+              controller: passwordController,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: 'Password',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -76,7 +126,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Verification_LoginPage()));
+                  login();
                 },
                 child: const Text(
                   'Next',
@@ -88,5 +138,6 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+    
   }
 }

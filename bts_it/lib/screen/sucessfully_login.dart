@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:bts_it/home_screen.dart';
+import 'package:bts_it/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class Sucessfully_loginPage extends StatefulWidget {
